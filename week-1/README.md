@@ -1,11 +1,15 @@
+# Week 1 Practice Problems
+
 Please complete the following questions by the next meeting:
 
-1. For matrix A = [[1, 2], [3, 4]] and vector v = [1, 2]^T, calculate by hand:
-   ->  2A
-   ->  v + v
-   ->  A ⊙  A
-   ->  A^T
-   ->  \<v, v\>
+1. For matrix `A = [[1, 2], [3, 4]]` and vector `v = [[1], [2]]` calculate by hand:
+   *  `2A`
+   *  `v + v`
+   *  `A ⊙ A`
+   *  `A^T`
+   *  `<v, v>`
+   
+*Note that `A` has a shape of `2 x 2` (two by two). The notation `[[1], [2]]` means a column vector with a shape of `2 x 1`. If I instead wrote `[1, 2]`, v would be a vector with the same elements but shape `1 x 2`.*
 
 2. Verify your results obtained for the Sample Problems using TensorFlow and Python. HINT: create a Python list, then convert that to a tensorflow `Tensor` object using `tf.convert_to_tensor`. Note that matrix multiplication (`AB` in math) can be calculated using  `A @ B`, and the Hadamard product can be calculated by `A * B`.  Documentation can be found at https://www.tensorflow.org/api_docs.
 
