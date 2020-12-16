@@ -19,10 +19,10 @@ Please complete the following questions by the next meeting:
 
 	with tf.GradientTape() as tape:
 	    # do operations here
-	    y = x ** 2 + 3
+	    y = tf.pow(x, 2) + 3
 
 	print(tape.gradient(y, x))
-	# will output the derivative of `x^2 + 3`, evaluated at the x-value `x = 3`
+	# will output the derivative of `x ** 2 + 3`, evaluated at the x-value `x = 3`
 
 	``` 
 
