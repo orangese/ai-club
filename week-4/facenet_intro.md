@@ -8,7 +8,7 @@ Paper link: https://arxiv.org/pdf/1503.03832.pdf
 
 Estimators take an input `x` to an output `y` via the transformation `φ(x) = y`, where `φ` is our estimator's name. Importantly, `x` and `y` are both assumed to be vectors. Following from our definition of a vector in the [Week 1 lesson](https://docs.google.com/presentation/d/1C_g7UwT1bRxZSExKv4a406xbRLGcLR7NnQleiIi46lQ/edit#slide=id.g9920006141_1_0), we can think of both the `x` and `y` vectors as points in some space.
 
-As an example, let's consider the estimator `φ(x; θ) = matmul(θ, x)`, where `θ` is a 2x3 matrix and `x` is a 3x1 matrix (or a 3-D vector). Note that the output `y = φ(x)` is going to be a 2x1 matrix (or, equivalently, a 2-D vector). We say that `φ` therefore is a transformation between 3-D space to 2-D space, since this estimator `φ` takes as input a 3-D vector and spits out a 2-D vector. Crucially, this transformation between spaces reveals important information about our inputs. Below is an example:
+As an example, let's consider the estimator `φ(x; θ) = matmul(θ, x)`, where `θ` is a 3x2 matrix and `x` is a 2x1 matrix (or a 2-D vector). Note that the output `y = φ(x)` is going to be a 3x1 matrix (or, equivalently, a 3-D vector). We say that `φ` therefore is a transformation between 2-D space to 3-D space, since this estimator `φ` takes as input a 2-D vector and spits out a 3-D vector. Crucially, this transformation between spaces reveals important information about our inputs. Below is an example:
 
 ![alt text](https://miro.medium.com/max/872/1*zWzeMGyCc7KvGD9X8lwlnQ.png)
 
