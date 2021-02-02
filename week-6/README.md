@@ -23,7 +23,10 @@ x = ...  # some input data
 output = layer(x)
 ```
 
-(An important note about dimensions: while MLP layers are defined to accept vectors as inputs (i.e., their shape should be (n,) ), in practice, `Dense` layers accept a (b, n) matrix as input. The reason for this is batching: recall that stochastic gradient descent calls for us to split the dataset into random partitions, called "batches". Crucially, *every element in a batch is processed at the same time*. This means that if we have a batch of 128 dataset input elements, each of which is an n-D vector, the neural network will in reality operate on a 128 x n dimensional matrix. The purpose of this batching is to speed up computations: it is much faster to process the 128 examples in parallel than sequentially.)
+(An important note about dimensions: while MLP layers are defined to accept vectors as inputs (i.e., their input shape should be (n,), which corresponds to an n-dimensional vector), in practice, `Dense` layers accept a (b, n) matrix as input. The reason for this is batching: recall that stochastic gradient descent calls for us to split the dataset into random partitions, called "batches". Crucially, *every element in a batch is processed at the same time*. This means that if we have a batch of 128 dataset input elements, each of which is an n-D vector, the neural network will in reality operate on a 128 x n dimensional matrix- a 128-length list of n-dimensional vectors. Each of the n-D vectors represents a unique datapoint, we've just grouped them together into a matrix. The purpose of this batching is to speed up computations: it is much faster to process the 128 examples in parallel than sequentially. See below for a diagram.)
+
+| ![alt](without_batching.png) | ![alt](with_batching.png) |
+|------------------------------|---------------------------|
 
 Test this out by calling `layer` on a vector `np.zeros((100,))`. What error do you get? Now, try calling `layer` on a matrix `np.zeros((128, 100))`. What happens now? Notice that the first dimension of the input matrix is the same as the first dimension of the output matrix: the so-called "batch dimension" does not change throughout the network. (Solution: the output shape is (b, n), where b is the batch size (128 here) and n is the number of neurons in our layer.)
 
