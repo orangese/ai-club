@@ -76,11 +76,11 @@ Now, create our digit classifying neural network: it should have be a 3-layer ML
 To train our neural network, we're going to use the [MNIST dataset](https://www.tensorflow.org/datasets/catalog/mnist). In order to use the dataset in the most effective way possible, please install the Python package `tensorflow-datasets` with `pip`. After doing so, load the MNIST data:
 
 ```python
-import tenosrflow_datasets as tfds
-ds = tfds.load("mnist", split="train", shuffle_train=True)
+import tensorflow_datasets as tfds
+ds = tfds.load("mnist", split="train", shuffle_files=True)
 ```
 
-This will load the MNIST dataset into the `ds` variable. `split=Train` means that we get the training data, and `shuffle_train=True` means that we shuffle the training data. Next, we have to shuffle and batch the datset to prepare it for training:
+This will load the MNIST dataset into the `ds` variable. `split=Train` means that we get the training data, and `shuffle_files=True` means that we shuffle the training data. Next, we have to shuffle and batch the datset to prepare it for training:
 
 ```python
 ds = ds.shuffle(buffer).batch(batch_size)
