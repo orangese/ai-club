@@ -9,7 +9,7 @@ This week, we will be building on top of the skills you learned last week with b
 Defining a model starts the same way, with the placebo Input layer. 
 
 ```python
-input_layer = tf.keras.layers.Input((784,))  # (20,) is the input data's shape
+input_layer = tf.keras.layers.Input((784,))  # (784,) is the input data's shape
 ```
 
 However, recall the nature of a convolutional network. Instead of a vectorized input, convolutional networks can take in the "full picture" in its original 2D format. Will expecting an input of shape (784, ) work while using a convolutional network? Think about how we got the number 784. How would we change this line to accept the images in their original 28 by 28 format? (images are in grayscale)
@@ -19,7 +19,7 @@ However, recall the nature of a convolutional network. Instead of a vectorized i
 
 ### Convolutional Layer
 
-The first layer of a CNN is the convolutional layer. Recall that the convolutional layer performs operations known as convolutions on its input data (represented by the blue grid). We multiply our input data element-wise by a kernel, or a weight matrix (in the image to the right, this is represented by the numbers in the bottom right corners of the shaded region), and sum the resulting matrix into a single scalar value. This process is repeated as we move this kernel over the input data, until we have completely populated the resulting `feature map` (represented by the green grid), which is simply a condensed expression of the original input data. 
+The first layer of a CNN is the convolutional layer. Recall that the convolutional layer performs operations known as convolutions on its input data (represented by the blue grid). We multiply our input data element-wise by a `kernel`, or a weight matrix (in the image to the right, this is represented by the numbers in the bottom right corners of the shaded region), and sum the resulting matrix into a single scalar value. This process is repeated as we move this kernel over the input data, until we have completely populated the resulting `feature map` (represented by the green grid), which is simply a condensed expression of the original input data, filtered by a kernel. 
 
 
 | ![alt](convolution.png) | ![alt](convolution2.png) |
@@ -28,7 +28,7 @@ The first layer of a CNN is the convolutional layer. Recall that the convolution
 
 ### Pooling Layer
 
-Recall that we discussed two types of pooling layers in last week's discussion, average and max pooling. Pooling layers serve to help reduce the parameter count of our model, and operate similarly to convolutional layers. However, instead of applying a kernel to each section of the input data, a pooling layer performs a uniform operation. In the case of max pooling, it simply takes the max value it sees as it travels over the input data. Looking at the image below, see if you can figure out what average pooling is!
+Recall that we discussed two types of `pooling layers` in last week's discussion, average and max pooling. Pooling layers serve to help reduce the parameter count of our model, and operate similarly to convolutional layers. However, instead of applying a kernel to each section of the input data, a pooling layer performs a uniform operation. In the case of max pooling, it simply takes the max value it sees as it travels over the input data. Looking at the image below, see if you can figure out what average pooling is!
 
 | ![alt](pooling.png) |
 |---------------------|
