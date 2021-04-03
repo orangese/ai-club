@@ -37,7 +37,7 @@ model.fit(dataset, batch_size=32, epochs=30,
 		  validation_split=0.2)
 ```
 
-**Q4**: See the [docs](https://keras.io/api/models/model_training_apis/) for more details regarding these two functions. Once you understand how to use them, replace the custom training loop we wrote in previous weeks (`for epoch in range(epochs): ...`) with the `compile`/`fit` API.
+**Q4**: See the [docs](https://keras.io/api/models/model_training_apis/) for more details regarding these two functions. Once you understand how to use them, replace the custom training loop we wrote in previous weeks (`for epoch in range(epochs): ...`) with the `compile`/`fit` API. After you rewrite the code with the `fit` API, you will need to modify your dataloading pipeline by doing three things: 1. load a separate test dataset and set `validation_data` equal to that test dataset, 2. specify `as_supervised=True` in the MNIST data loading, and 3. write a data normalization function and `map` it to the datasets. If you're having trouble, check out the [TensorFlow guide](https://www.tensorflow.org/datasets/keras_example) or the [solutions](https://colab.research.google.com/drive/1yLosCbrm8GO3oRj9xIe6k69gRAEjwGI9?authuser=1).
 
 #### Data augmentation
 
